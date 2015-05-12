@@ -1,5 +1,4 @@
-val data = """State	Capital
-Alabama	Montgomery
+val data = """Alabama	Montgomery
 Alaska	Juneau
 Arizona	Phoenix
 Arkansas	Little Rock
