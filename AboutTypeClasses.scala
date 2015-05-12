@@ -5,9 +5,8 @@ class CSV(val value:String)  {
 }
 
 object EmployeeSerializers {
-//  implicit val employee2XML = (e:Employee) => <employee><social-security>{e.ssn}</social-security><first-name>{e.firstName}</first-name><last-name>{e.lastName}</last-name></employee>
+  implicit val employee2XML = (e:Employee) => <employee><social-security>{e.ssn}</social-security><first-name>{e.firstName}</first-name><last-name>{e.lastName}</last-name></employee>
 
-  implicit val employee2XML = (e:Employee) => <employee/>
   implicit val employee2CSV = (e:Employee) => new CSV(s"Employee, ${e.ssn}, ${e.firstName}, ${e.lastName}")
 }
 
