@@ -27,7 +27,6 @@ e match {
    case _ => println("Get Out!")
 }
 
-
 val xs = List(1,2,3,4) 
 
 val r = xs match {
