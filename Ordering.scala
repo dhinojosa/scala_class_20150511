@@ -11,11 +11,24 @@ object MyOrderingLibrary {
        def compare(e1:Employee, e2:Employee) = e1.ssn.compare(e2.ssn)
    }
 }
-
-import MyOrderingLibrary.{orderBySSN}
-
-val list = List(new Employee("123-45-6789", "Bob", "Henderson", 20000),
+ val list = List(new Employee("123-45-6789", "Bob", "Henderson", 20000),
                 new Employee("222-04-0202", "Ann", "McCarthy", 150000),
-                new Employee("930-22-9943", "Janice", "Agnew", 40000))
+                new Employee("213-03-9943", "Janice", "Agnew", 40000),
+                new Employee("444-12-9943", "Sammy", "Zygote", 10000),
+                new Employee("246-33-9943", "Marc", "Locust", 20000),
+                new Employee("938-50-9943", "Julie", "Oleg", 30000),
+                new Employee("888-19-9943", "Ramona", "Gonzales", 140000))
 
-println(list.sorted)
+
+    def topThree [T : Ordering](xs:List[T]):List[T] = xs.sorted.take(3);
+
+{
+   import MyOrderingLibrary.{orderBySSN}
+   println(list.sorted)
+   println (topThree(list))
+}
+
+{
+   import MyOrderingLibrary.{orderBySalary}
+   println(topThree(list))
+}
